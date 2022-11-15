@@ -1,11 +1,12 @@
 const axios = require("axios");
 const db = require("../db");
 const { Diet, Recipe } = require("../db");
-const { API_KEY, API_KEY1 } = process.env;
+/* const { API_KEY, API_KEY1 } = process.env; */
+const API_KEY1 = 'apiKey=31f42348fa114d0088d8b9a89c5ece5c';
 
 // Controller functions: 
 const getApiInfo = async() => {
-    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?${API_KEY1}&addRecipeInformation=true&number=100`);
+    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=31f42348fa114d0088d8b9a89c5ece5c&addRecipeInformation=true&number=100`);
 
     const apiInfo = await apiUrl.data.results.map(e => {
         return {
@@ -17,12 +18,7 @@ const getApiInfo = async() => {
             score: e.spoonacularScore,
             healthScore: e.healthScore,
             dishTypes: e.dishTypes,
-            steps: e.analyzedInstructions[0] ? .steps.map(e => {
-                return {
-                    number: e.number,
-                    step: e.step
-                }
-            })
+
         }
     })
 
@@ -42,7 +38,7 @@ const getDbInfo = async() => {
 }
 
 const getApiById = async(id) => {
-    return await axios.get(`https://api.spoonacular.com/recipes/${id}/information?${API_KEY1}`)
+    return await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=31f42348fa114d0088d8b9a89c5ece5c`)
 }
 
 

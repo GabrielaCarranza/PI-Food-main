@@ -1,0 +1,34 @@
+.search {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    justify-content: center;
+    font-size: calc(1rem+0.8vw);
+}
+
+.searchInput {
+    height: 2rem;
+    width: 20rem;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+}
+
+.searchButton {
+    height: 2rem;
+    margin-top: 1rem;
+    color: white;
+    background-color: #ff1616;
+    font-size: calc(0.8rem+0.5vw);
+    text-align: center;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 1px white;
+    cursor: pointer;
+}
+
+.searchButton:hover {
+    color: #ff1616;
+    background-color: white;
+}

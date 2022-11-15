@@ -1,0 +1,48 @@
+.recipe {
+    width: 15rem;
+    height: 22rem;
+    padding: 0.3vw;
+    border: 1px solid black;
+    margin: 0.3vw;
+    box-shadow: 3px 5px 10px 0 white;
+}
+
+.zonaReciImg {
+    width: 100%;
+    height: auto;
+    padding: 0.2vw;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.recipeImg {
+    width: 100%;
+    height: auto;
+}
+
+.zonaRecipeName {
+    width: 100%;
+}
+
+.recipeName {
+    display: flex;
+    font-weight: 900;
+    text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
+}
+
+.recipeName:hover {
+    overflow: visible;
+}
+
+ul li {
+    list-style: none;
+    width: 100%;
+    padding: auto;
+}
+
+li {
+    display: inline;
+    text-align: center;
+    padding: auto;
+}

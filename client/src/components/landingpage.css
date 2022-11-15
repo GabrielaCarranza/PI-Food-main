@@ -1,0 +1,67 @@
+.landing {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.ingLandPage {
+    width: 60%;
+    height: 100%;
+}
+
+#foto {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+}
+
+.textoLandPage {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #051011;
+    color: white;
+    padding: auto;
+}
+
+.welcomeMsg {
+    display: flex;
+    /*  padding: 0.5rem; */
+    font-style: italic;
+    /* font-size: calc(5rem+0.8vw); */
+    font-weight: 700;
+    text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
+}
+
+.welcomeMsg2 {
+    display: flex;
+    padding: 0px;
+    /*  font-style: italic; */
+    /* font-size: calc(2rem+0.8vw); */
+    font-weight: 700;
+    text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
+}
+
+.homeButton {
+    color: white;
+    background-color: #ff1616;
+    text-align: center;
+    padding: 10px 25px;
+    margin: 15px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 1px white;
+    cursor: pointer;
+}
+
+.homeButton:hover {
+    color: #ff1616;
+    background-color: white;
+    font-weight: 900;
+}

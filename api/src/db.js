@@ -2,16 +2,25 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const {
-    DB_USER,
-    DB_PASSWORD,
-    DB_HOST,
-} = process.env;
 
-const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/food`, {
+
+/* console.log(process.env.DB_USER);
+console.log(process.env.DB_PASSWORD);
+console.log(process.env.DB_HOST);
+console.log(process.env.API_KEY1); */
+
+
+/* const sequelize = new Sequelize(`postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}/food`, {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+}); */
+
+//OTRA FORMA DE CONECTAR- baseDatos, Username, password y luego un obj con configuraciones {}
+const sequelize = new Sequelize('food', process.env.DB_USER, process.env.DB_PASSWORD, {
+    host: "localhost",
+    dialect: "postgres",
 });
+
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
@@ -28,6 +37,7 @@ modelDefiners.forEach(model => model(sequelize));
 // Capitalizamos los nombres de los modelos ie: product => Product
 let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [entry[0][0].toUpperCase() + entry[0].slice(1), entry[1]]);
+
 sequelize.models = Object.fromEntries(capsEntries);
 
 // En sequelize.models están todos los modelos importados como propiedades
