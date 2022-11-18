@@ -21,6 +21,9 @@
     height: auto;
 }
 
+
+/*--------------------------*/
+
 .zonaRecipeName {
     width: 100%;
 }
@@ -35,14 +38,22 @@
     overflow: visible;
 }
 
-ul li {
-    list-style: none;
+
+/*--------------------------*/
+
+.listaTiposDieta {
     width: 100%;
-    padding: auto;
+    display: flex;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
 }
 
-li {
-    display: inline;
-    text-align: center;
-    padding: auto;
+.ulZona {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.diets {
+    list-style: none;
 }

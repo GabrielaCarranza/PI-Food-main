@@ -13,21 +13,23 @@ export default function Recipe(recipes) {
             <div className="zonaReciImg">
                 <img className="recipeImg" src={image} alt="IMAGEN DE LA RECETA"/>
             </div>
-            
+             
             <div className="zonaRecipeName">
-                <h3 className="recipeName">{name}</h3>            
+                <h4 className="recipeName">{name}</h4>            
             </div>
 
-            <ul>
-                {dietTypes?.map(e => {
-                    return (
-                        // CONVERTIR EN MAYUSCULA EL TIPO DE DIETA
+            <dir className="listaTiposDieta">
+                <ul className="ulZona">
+                    {dietTypes?.map(e => {
+                        return (
+                            // CONVERTIR EN MAYUSCULA EL TIPO DE DIETA
+                            
+                            <li className="diets" key={prevId++}>|{e}|</li>
                         
-                        <li className="diets" key={prevId++}>{e}| </li>
-                       
-                    )
-                })}            
-            </ul>
+                        )
+                    })}            
+                </ul>
+            </dir>
             
         </div>
     )

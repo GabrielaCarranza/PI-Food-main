@@ -1,0 +1,8 @@
+
+
+colores
+negro: #051011
+letras black
+
+amarillo:#fbf859
+rojo:#ff1616

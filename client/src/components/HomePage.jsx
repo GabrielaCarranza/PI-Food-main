@@ -6,7 +6,8 @@ import Recipe from './Recipe';
 import { Link } from 'react-router-dom'
 import Paged from './Paged';
 import SearchBar from './SearchBar';
-import './HomePage.css'
+import './HomePage.css';
+import fotoLogo from '../Images/LogoHenryFood.png';
  
 
 let prevId = 1;
@@ -61,21 +62,33 @@ export default function Home() {
         setPage(1);
         setOrder(`Order ${e.target.value}`);
     }
- 
+  
     return(
         <div className="home">
-            <h1 className="initialMsg">Let's do it!</h1>
+            <div className='Presentation'>
+                <img src={fotoLogo} alt="Logo de Henry Food" />
+                <h1 className="initialMsg">Let's do it!</h1>
+            </div>
+
+
             <div className='zonaBotones'>
-                <Link to="/recipe">
-                    <button className="addButton">Add new recipe</button>
-                </Link>
-                <button className="refreshButton" onClick={handleClick}>Refresh recipes</button>
+
+                <div>
+                    <SearchBar/>
+                </div>
+
+                <div>
+                    <Link to="/recipe">
+                        <button className="addButton">Add new recipe</button>
+                    </Link>
+               {/*  <button className="refreshButton" onClick={handleClick}>Refresh recipes</button> */}
+               </div>
                 
             </div>
 
-            <SearchBar/>
+          
 
-            <dir className="zonaMain ">
+            <div className="zonaMain ">
                 <div className="zonaSelectOrder">
                     <label className="filters">Sort:</label>  
                     <select className="selectSort" name="alphabetical" onChange={e => handleAlphabeticalSort(e)}>
@@ -89,9 +102,10 @@ export default function Home() {
                         <option value="asc">From Min to Max</option>
                         <option value="desc">From Max to Min</option>
                     </select>
+                    <br/>
 
                     <label className="filters">Diet Types:</label>
-                    <select className="selectTypes" name="diets" onChange={e => handleDietTypeFilter(e)}>
+                    <select className="selectSort" name="diets" onChange={e => handleDietTypeFilter(e)}>
                         <option disabled selected>Select...</option>
                         <option value="gluten free">Gluten Free</option>
                         <option value="ketogenic">Keto</option>
@@ -109,8 +123,8 @@ export default function Home() {
                     </select>
                 </div>
 
-                <dir className="zonaMostrar">            
-
+                <div className="zonaMostrar">            
+                
                     <Paged recipesPage={recipesPage} allRecipes={allRecipes.length} paged={paged}/>           
                 
 
@@ -131,17 +145,12 @@ export default function Home() {
                             )
                         })
                     }
-                    </div>            
+                    </div>   
+
                     
                     <Paged recipesPage={recipesPage} allRecipes={allRecipes.length} paged={paged}/>
-                </dir>
-            </dir>
+                </div>
+            </div>
         </div>
-
-
-
-
-
-
     )
 }

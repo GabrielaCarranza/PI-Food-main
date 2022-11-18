@@ -1,9 +1,4 @@
 .addRecipe {
-    /* background-image: url('../Images/background.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-attachment: fixed; */
     background-color: black;
     min-height: 100vw;
     display: flex;
@@ -59,7 +54,7 @@
 }
 
 .submitButton:hover {
-    color: #ce5249;
+    color: #ff1616;
     background-color: rgb(231, 218, 218);
 }
 
@@ -108,7 +103,7 @@
     color: white;
 }
 
-.dietTypes {
+.dietTyp {
     /* display: flex;
     flex-direction: column; */
     color: black;

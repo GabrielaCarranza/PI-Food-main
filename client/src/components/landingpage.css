@@ -1,34 +1,61 @@
-.landing {
-    width: 100%;
-    height: 100%;
+.contenedor {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+/*-----------------*/
+
+.Presentation {
+    width: 100vw;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.Presentation img {
+    width: auto;
+    height: 8rem;
+    display: flex;
+    justify-items: left;
+}
+
+
+/*--------------*/
+
+.landing {
+    width: 100%;
+    /* height: 70%; */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
-    padding-top: 3rem;
     padding-left: 1rem;
     padding-right: 1rem;
 }
 
 .ingLandPage {
-    width: 60%;
-    height: 100%;
+    width: 45%;
+    /*  display: flex;
+    justify-items: flex-start; */
 }
 
 #foto {
     width: 100%;
     height: auto;
-    border-radius: 1rem;
 }
 
 .textoLandPage {
-    width: 40%;
-    height: 100%;
+    width: 55%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    background-color: #051011;
+    /* background-color: #051011; */
     color: white;
-    padding: auto;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
 }
 
 .welcomeMsg {
@@ -58,10 +85,45 @@
     border-radius: 3px;
     box-shadow: 3px 3px 5px 1px white;
     cursor: pointer;
+    float: left;
 }
 
 .homeButton:hover {
     color: #ff1616;
     background-color: white;
     font-weight: 900;
+}
+
+
+/*--------------------------------------- RESPONSIVE  ---------------------------------------------*/
+
+@media all and (max-width: 900px) {
+    .landing {
+        display: flex;
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+        padding: 1rem;
+    }
+    .textoLandPage {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        /* padding: 1rem; */
+    }
+    .ingLandPage {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0px;
+        padding-top: 0.5rem;
+    }
+    #foto {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: auto;
+    }
 }

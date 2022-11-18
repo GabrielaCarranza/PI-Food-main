@@ -152,7 +152,7 @@ export default function AddRecipe() {
                                      type="checkbox"
                                       name={d} value={d} 
                                       selected={input.dietTypes.includes(d)} onChange={e => handleCheckBox(e)}/>
-                                      <label className="dietTypes">{d}</label>
+                                      <label className="dietTyp">{d}</label>
                                 </div>
                             )
                         })}

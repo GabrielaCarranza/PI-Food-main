@@ -4,37 +4,39 @@
     justify-content: center;
     align-items: center;
     color: white;
-    padding-top: 3rem;
+}
+
+.Presentation {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.Presentation img {
+    width: auto;
+    height: 8rem;
+    display: flex;
+    justify-items: left;
+    padding-right: 2rem;
 }
 
 .initialMsg {
     display: flex;
+    padding-top: 4rem;
     font-style: italic;
     font-weight: 700;
-    text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
+    /* text-shadow: 6px 4px 5px white; */
 }
+
+
+/*--------------------------------*/
 
 .zonaBotones {
     width: 100%;
-    text-align: right;
-    padding-right: 1rem;
-}
-
-.refreshButton {
-    color: black;
-    background-color: coral;
-    font-size: calc(0.8rem+0.5vw);
-    text-align: center;
-    margin: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 3px;
-    box-shadow: 3px 3px 5px 1px white;
-    cursor: pointer;
-}
-
-.refreshButton:hover {
-    color: coral;
-    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
 .addButton {
@@ -42,7 +44,7 @@
     background-color: #ff1616;
     font-size: calc(0.8rem+0.5vw);
     text-align: center;
-    margin: 0.5rem;
+    /* margin: 0.5rem; */
     padding: 0.5rem;
     border-radius: 3px;
     box-shadow: 3px 3px 5px 1px white;
@@ -54,8 +56,11 @@
     background-color: white;
 }
 
+
+/*----------------------------*/
+
 .zonaMain {
-    width: 100%;
+    width: 100vw;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -63,7 +68,8 @@
 }
 
 .zonaSelectOrder {
-    width: 20%;
+    width: 15%;
+    height: 100%;
     color: white;
     padding: 0.5rem;
 }
@@ -72,35 +78,36 @@
     display: flex;
     flex-direction: row;
     margin: 0.5rem;
-}
-
-.zonaMostrar {
-    width: 80%;
-    height: 100%;
-    padding: 0.5rem;
+    width: 100%;
 }
 
 .filters {
     display: flex;
-    font-size: calc(1rem+0.5vw);
+    font-size: calc(1.2rem+0.8vw);
     font-weight: 900;
-    text-shadow: 6px 4px 5px #ff1616;
     padding: 0.5rem;
 }
 
-.select {
-    width: 100%;
+
+/*----------------------------*/
+
+.zonaMostrar {
+    width: 85%;
+    height: 100%;
+    padding: 0.3rem;
+}
+
+.allrecipes {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
-    padding: auto;
+    flex-wrap: wrap;
+    /* padding: 0.5rem; */
 }
 
 .eachRecipe {
     display: flex;
     padding: 0.5rem;
-    padding: auto;
     text-align: center;
 }
 
@@ -116,13 +123,4 @@
     color: none;
     text-decoration: none;
     text-align: center;
-}
-
-.allrecipes {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding: 0.5rem;
-    /* background-color: white; */
 }
