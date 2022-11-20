@@ -8,6 +8,8 @@ import Paged from './Paged';
 import SearchBar from './SearchBar';
 import './HomePage.css';
 import fotoLogo from '../Images/LogoHenryFood.png';
+import foto_default from '../Images/LogoHenryFood_grande.png';
+
  
 
 let prevId = 1;
@@ -21,7 +23,9 @@ export default function Home() {
     
     
     const [page, setPage] = useState(1);
-    const [recipesPage, setRecipesPage] = useState(9);
+    //defino que se muestren 9 recetas por página
+    /* const [recipesPage, setRecipesPage] = useState(9); */
+    const [recipesPage] = useState(9);
     
     const quantityRecipesPage = page * recipesPage;
     const firstRecipePage = quantityRecipesPage - recipesPage;
@@ -37,11 +41,11 @@ export default function Home() {
     }, [dispatch]);
 
 
-    function handleClick(e) {
+/*     function handleClick(e) {
         e.preventDefault();
         dispatch(getRecipes());
         setPage(1);
-    }
+    } */
 
     function handleDietTypeFilter(e) {
         e.preventDefault();
@@ -53,6 +57,7 @@ export default function Home() {
         e.preventDefault();                
         dispatch(aplhabeticalSort(e.target.value))
         setPage(1);
+        //console.log(`Order ${e.target.value}`);
         setOrder(`Order ${e.target.value}`);
     }
     
@@ -77,11 +82,11 @@ export default function Home() {
                     <SearchBar/>
                 </div>
 
-                <div>
+                <div className='zonaRecipeAdd'>
                     <Link to="/recipe">
                         <button className="addButton">Add new recipe</button>
                     </Link>
-               {/*  <button className="refreshButton" onClick={handleClick}>Refresh recipes</button> */}
+              
                </div>
                 
             </div>
@@ -103,12 +108,12 @@ export default function Home() {
                         <option value="desc">From Max to Min</option>
                     </select>
                     <br/>
-
+                  
                     <label className="filters">Diet Types:</label>
                     <select className="selectSort" name="diets" onChange={e => handleDietTypeFilter(e)}>
                         <option disabled selected>Select...</option>
                         <option value="gluten free">Gluten Free</option>
-                        <option value="ketogenic">Keto</option>
+                        <option value="ketogenic">Ketogenic</option>
                         <option value="vegetarian">Vegetarian</option>
                         <option value="lacto vegetarian">Lacto-Vegetarian</option>
                         <option value="ovo vegetarian">Ovo-Vegetarian</option>
@@ -125,7 +130,9 @@ export default function Home() {
 
                 <div className="zonaMostrar">            
                 
-                    <Paged recipesPage={recipesPage} allRecipes={allRecipes.length} paged={paged}/>           
+                    <Paged recipesPage={recipesPage} 
+                    allRecipes={allRecipes.length} 
+                    paged={paged}/>           
                 
 
                     <div className="allrecipes">
@@ -137,9 +144,11 @@ export default function Home() {
                                         <Recipe
                                             image={e.image ? 
                                                 e.image :
-                                                'https://images.unsplash.com/photo-1635321593217-40050ad13c74?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1748&q=80'}
+                                                foto_default}
                                             name={e.name}                             
-                                            dietTypes={e.dietTypes} />
+                                            dietTypes={e.dietTypes} 
+                                            score={e.score}
+                                            />
                                     </Link>
                                 </div>
                             )

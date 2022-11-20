@@ -4,7 +4,9 @@ import { GET_RECIPES, GET_RECIPE_DETAILS, DIET_TYPE_FILTER, ALPHABETICAL_SORT, S
 export function getRecipes() {
     return function(dispatch) {
         //${LOCAL_HOST}
-        console.log('http://localhost:3001');
+        //console.log('http://localhost:3001');
+
+        // ACÁ RELACIONO EL FRONT CON EL BACKEND
         axios.get(`http://localhost:3001/api/recipes`)
             .then((response) => {
                 return dispatch({ type: GET_RECIPES, payload: response.data })
@@ -15,12 +17,15 @@ export function getRecipes() {
 };
 
 export function getRecipesByName(payload) {
+    // REBIDO PARAMETRO paylaod con el nombre de la RECIPE
     return async function(dispatch) {
         try {
+            // LE ENVÍO AL BACKEND EL PARÁMETRO PAYLOAD QUE CONTIENE EL NOMBRE DE LA RECETA/ RECIPE
             var response = await axios.get(`http://localhost:3001/api/recipes?name=${payload}`);
+            //RETORNA LO QUE DEVUELVA LA RUTA 
             return dispatch({ type: SEARCH_RECIPE, payload: response.data })
         } catch {
-            return alert('Recipe Not Found- action getRecipesByName')
+            return alert('Recipe Not Found !')
         }
     }
 }

@@ -1,7 +1,8 @@
 .recipe {
     width: 15rem;
-    height: 22rem;
-    padding: 0.3vw;
+    height: 24rem;
+    /*  height: max-content; */
+    padding: 0.5rem;
     border: 1px solid black;
     margin: 0.3vw;
     box-shadow: 3px 5px 10px 0 white;
@@ -30,12 +31,23 @@
 
 .recipeName {
     display: flex;
+    color: #fbf859;
     font-weight: 900;
-    text-shadow: 6px 4px 5px rgba(0, 0, 0, 0.43);
+    padding-left: 0.3rem;
+    padding-right: 0.3rem;
 }
 
 .recipeName:hover {
     overflow: visible;
+}
+
+.zonaScore {
+    width: 100%;
+}
+
+.recipeScore {
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 
@@ -43,13 +55,11 @@
 
 .listaTiposDieta {
     width: 100%;
-    display: flex;
-    padding-right: 0.3rem;
     padding-left: 0.3rem;
+    padding-right: 0.3rem;
 }
 
-.ulZona {
-    width: 100%;
+.listaTiposDieta ul {
     display: flex;
     flex-wrap: wrap;
 }

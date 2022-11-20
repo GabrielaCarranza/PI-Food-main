@@ -1,11 +1,11 @@
 import React from "react";
 import './recipe.css';
 
-
+ 
 let prevId = 1;
 
 export default function Recipe(recipes) {
-    const { image, name, dietTypes } = recipes
+    const { image, name, dietTypes, score } = recipes
     
     return (
         <div className="recipe">
@@ -18,8 +18,13 @@ export default function Recipe(recipes) {
                 <h4 className="recipeName">{name}</h4>            
             </div>
 
-            <dir className="listaTiposDieta">
-                <ul className="ulZona">
+            <div className="zonaScore">                
+                <h5 className="recipeScore">Health Score:  {score}</h5>
+                
+            </div>
+
+            <div className="listaTiposDieta">
+                <ul >
                     {dietTypes?.map(e => {
                         return (
                             // CONVERTIR EN MAYUSCULA EL TIPO DE DIETA
@@ -29,7 +34,7 @@ export default function Recipe(recipes) {
                         )
                     })}            
                 </ul>
-            </dir>
+            </div>            
             
         </div>
     )

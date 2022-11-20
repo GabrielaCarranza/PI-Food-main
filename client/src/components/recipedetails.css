@@ -1,4 +1,50 @@
-.backButton {
+.contenedor2 {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding: 2rem;
+}
+
+.imagenRecipe2 {
+    margin: 1.5rem;
+    width: 30%;
+}
+
+.detailImg2 {
+    display: flex;
+    box-shadow: 3px 3px 5px 1px white;
+    /* width: 400px;
+    height: 250px */
+    width: 100%;
+    height: auto;
+}
+
+.details {
+    margin: 1.5rem;
+    width: 70%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.texts {
+    font-weight: 900;
+    color: #fbf859;
+    display: flex;
+    justify-content: center;
+}
+
+.texts2 {
+    font-weight: 700;
+}
+
+.ddsh {
+    display: flex;
+    justify-content: start;
+    padding: 0px;
+}
+
+.backButton2 {
     color: rgb(231, 218, 218);
     background-color: #ce5249;
     font-size: 17px;
@@ -15,56 +61,14 @@
     background-color: rgb(231, 218, 218);
 }
 
-.details {
-    margin: 10px;
-    padding: 5px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.texts {
-    font-style: italic;
-    font-weight: 700;
-    text-shadow: 6px 4px 5px white;
-    display: flex;
-    justify-content: center;
-}
-
-.divimg {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-
-.detailImg {
-    margin: 5px;
-    display: flex;
-    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
-    width: 400px;
-    height: 250px
-}
-
-.ddsh {
-    display: flex;
-    justify-content: center;
-}
-
 .dishesanddiets {
     display: flex;
     flex-direction: column;
-    margin-left: 2px;
-    margin-right: 2px;
-    padding-left: 5px;
-    padding-right: 5px;
-    padding-bottom: 1px;
-    border-radius: 3px;
-    font-style: italic;
-    text-shadow: 6px 4px 5px white;
-    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
-    background-color: rgb(231, 218, 218, 0.3);
+    padding-left: 1rem;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
 }
 
 .scores {
@@ -76,24 +80,39 @@
     padding-left: 5px;
     padding-right: 5px;
     padding-bottom: 1px;
-    font-style: italic;
-    text-shadow: 6px 4px 5px white;
-    border-radius: 3px;
-    box-shadow: 3px 3px 5px 1px rgb(112, 44, 44);
-    background-color: rgb(231, 218, 218, 0.3);
 }
 
 .summary {
+    text-indent: 1rem;
     text-align: justify;
-    padding-left: 10px;
-    background-color: rgb(231, 218, 218, 0.3);
-    font-weight: 500;
 }
 
 .steps {
     padding-left: 10px;
     text-align: justify;
     list-style: none;
-    background-color: rgb(231, 218, 218, 0.3);
     font-weight: 500;
+}
+
+
+/*--------------------------------------- RESPONSIVE  ---------------------------------------------*/
+
+@media all and (max-width: 900px) {
+    .contenedor2 {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        justify-content: center;
+    }
+    .imagenRecipe2 {
+        margin: 1.5rem;
+        width: 80%;
+        padding: auto;
+    }
+    .details {
+        /*  margin: 2rem; */
+        width: 100%;
+        padding: 1rem;
+    }
 }

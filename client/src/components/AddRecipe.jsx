@@ -27,8 +27,7 @@ export default function AddRecipe() {
     const [input, setInput] = useState({
         name: ''  ,
         summary: '',
-        score: '',
-        healthScore: '',
+        score: '',       
         steps: '',
         dietTypes: []
     })
@@ -39,7 +38,7 @@ export default function AddRecipe() {
 
     function handleChange(e) {
         e.preventDefault();
-        setInput((prevInput) => {   //// de esta manera el componente muestra los cambios (componentdidupdate?) para poder ir validando
+        setInput((prevInput) => {   
             const newInput = {
                 ...prevInput,
                 [e.target.name]: e.target.value
@@ -79,8 +78,7 @@ export default function AddRecipe() {
          } else if (
             input.name === '' && 
             input.summary === '' && 
-            input.score === '' &&
-            input.healthScore === '' &&
+            input.score === '' &&         
             input.steps === '' &&
             !input.dietTypes.length) {
             alert("Please complete the form");}
@@ -90,8 +88,7 @@ export default function AddRecipe() {
             setInput({
                 name: "",
                 summary: '',
-                score: '',
-                healthScore: '',
+                score: '',              
                 steps: [],
                 dietTypes: []
             });
@@ -106,6 +103,7 @@ export default function AddRecipe() {
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="form">
                     <div className="prettierForm">
+
                         <div className="nameInput">
                             <label className="msgs">Name:</label>
                             <input className="inputs" name="name" type="text" value={input.name} onChange={e => handleChange(e)}/>
@@ -113,6 +111,7 @@ export default function AddRecipe() {
                                 <span className="errors">{errors.name}</span>
                             )}
                         </div>
+
                         <div className="nameInput">
                             <label className="msgs">Summary:</label>
                             <textarea name="summary" type="text" rows="4" cols="30" value={input.summary} onChange={e => handleChange(e)}/>
@@ -120,6 +119,7 @@ export default function AddRecipe() {
                                 <span className="errors">{errors.summary}</span>
                             )}
                         </div>
+
                         <div className="nameInput">
                             <label className="msgs">Score:</label>
                             <input name="score" type="number" value={input.score} onChange={e => handleChange(e)}/>
@@ -127,13 +127,7 @@ export default function AddRecipe() {
                                 <span className="errors">{errors.score}</span>
                             )}
                         </div>
-                        <div className="nameInput">
-                            <label className="msgs">Health Score:</label>
-                            <input name="healthScore" type="number" value={input.healthScore} onChange={e => handleChange(e)}/>
-                            {errors.healthScore && (
-                                <span className="errors">{errors.healthScore}</span>
-                            )}
-                        </div>
+                       
                         <div className="nameInput">
                             <label className="msgs">Steps:</label>
                             <textarea name="steps" type="text" rows="4" cols="40" value={input.steps} onChange={e => handleChange(e)}/>
@@ -142,6 +136,7 @@ export default function AddRecipe() {
                             )}
                         </div>
                     </div>
+
                     <div className="checkSelect">
                         <label className="msg">Diet Types:  </label>
                         {dietTypes.map(d =>{
@@ -161,8 +156,11 @@ export default function AddRecipe() {
                         )}
                     </div>
                 </div>
+
                 <button className="submitButton" type="submit">Submit Recipe</button>
+
                 <Link to="/home"><button className="goBackButton">Go back</button></Link>
+                
             </form>
         </div>
 

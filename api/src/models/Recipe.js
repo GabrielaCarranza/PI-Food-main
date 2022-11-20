@@ -3,11 +3,19 @@ const { DataTypes } = require('sequelize');
 // Luego le injectamos la conexion a sequelize.
 
 
+/* REQUERIMIENTO PI-> ## Base de datos
+El modelo de la base de datos deberá tener las siguientes entidades (Aquellas propiedades marcadas con asterisco deben ser obligatorias):
+
+[ ] Receta con las siguientes propiedades:
+  - ID: *
+  - Nombre *
+  - Resumen del plato * ->summary
+  - Nivel de "comida saludable" (health score) ->healthScore
+  - Paso a paso ->steps: */
 
 module.exports = (sequelize) => {
     // defino el modelo
     sequelize.define('recipe', {
-
         id: {
             type: DataTypes.UUID,
             defaultValue: DataTypes.UUIDV4,
@@ -23,9 +31,6 @@ module.exports = (sequelize) => {
             allowNull: false,
         },
         score: {
-            type: DataTypes.INTEGER
-        },
-        healthScore: {
             type: DataTypes.INTEGER
         },
         steps: {
