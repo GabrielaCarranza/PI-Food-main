@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRecipes, dietTypeFilter, aplhabeticalSort, scoreSort } from '../actions';
+import { getRecipes, dietTypeFilter, aplhabeticalSort, scoreSort,getDietTypes } from '../actions';
 import Recipe from './Recipe';
 import { Link } from 'react-router-dom'
 import Paged from './Paged';
@@ -18,6 +18,7 @@ export default function Home() {
     
     const dispatch = useDispatch();
     const allRecipes = useSelector((state) => state.recipes);
+    const dietTypes = useSelector((state) => state.dietTypes);
     
     const [order, setOrder] = useState('')
     
@@ -40,8 +41,11 @@ export default function Home() {
         dispatch(getRecipes())
     }, [dispatch]);
 
+    useEffect(() => {
+        dispatch(getDietTypes());
+    }, [dispatch]);
 
-/*     function handleClick(e) {
+   /*  function handleClick(e) {
         e.preventDefault();
         dispatch(getRecipes());
         setPage(1);
@@ -67,6 +71,7 @@ export default function Home() {
         setPage(1);
         setOrder(`Order ${e.target.value}`);
     }
+    
   
     return(
         <div className="home">
@@ -112,24 +117,19 @@ export default function Home() {
                         <option value="asc">From Min to Max</option>
                         <option value="desc">From Max to Min</option>
                     </select>
-                    <br/>
+                    <br/>  
                   
                     <label className="filters">Diet Types:</label>
                     <select className="selectSort" name="diets" onChange={e => handleDietTypeFilter(e)}>
-                        <option disabled selected>Select...</option>
-                        <option value="gluten free">Gluten Free</option>
-                        <option value="ketogenic">Ketogenic</option>
-                        <option value="vegetarian">Vegetarian</option>
-                        <option value="lacto vegetarian">Lacto-Vegetarian</option>
-                        <option value="ovo vegetarian">Ovo-Vegetarian</option>
-                        <option value="lacto ovo vegetarian">Lacto-Ovo-Vegetarian</option>
-                        <option value="vegan">Vegan</option>
-                        <option value="pescetarian">Pescetarian</option>
-                        <option value="paleolithic">Paleo</option>
-                        <option value="primal">Primal</option>
-                        <option value="low fodmap">Low FODMAP</option>
-                        <option value="whole 30">Whole30</option>
-                        <option value="dairy free">Dairy Free</option>
+                    <option disabled selected>Select...</option>
+                    <option value="all">All</option>
+                    {dietTypes.map(op => (
+                        
+                        <option key={op} value={op}>
+                            {op}
+                        </option>
+                    ))}
+                      
                     </select>
                 </div>
 

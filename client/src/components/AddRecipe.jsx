@@ -16,7 +16,7 @@ function validate(input) {
     if (!input.dietTypes.length) errors.dietTypes = 'You must select at least one diet type';
     return errors;
 };
-
+ 
 
 export default function AddRecipe() {
     const dispatch = useDispatch();
