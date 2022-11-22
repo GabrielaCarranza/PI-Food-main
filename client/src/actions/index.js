@@ -51,6 +51,19 @@ export function addRecipe(payload) {
         }
     }
 }
+
+export function addType(payload) {
+    return async function(dispatch) {
+        try {
+            var response = await axios.post(`http://localhost:3001/api/type`, payload);
+            return response;
+        } catch (error) {
+            console.log(error)
+        }
+    }
+}
+
+
 export function getRecipeDetails(payload) {
     return async function(dispatch) {
         try {

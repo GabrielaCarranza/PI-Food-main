@@ -4,7 +4,7 @@ const { getApiById, getAllRecipes, getDbById } = require('../controllers/recipes
 const { Recipe, Diet } = require('../db')
 
 /* const { API_KEY, API_KEY1 } = process.env;
-const API_KEY1 = '02043f31c431479b8aa6a815d5104223';*/
+const API_KEY1 = 'ec69ec16c785477cbafe2e93ff6fffa6';*/
 
 const router = Router();
 
@@ -50,8 +50,6 @@ router.get('/', async(req, res, next) => {
 });
 
 
-
-
 router.get('/:id', async(req, res, next) => {
     const { id } = req.params
     try {
@@ -83,9 +81,6 @@ router.get('/:id', async(req, res, next) => {
         return res.status(404).send('Recipe not found')
     }
 });
-
-
-
 
 module.exports = router;
 

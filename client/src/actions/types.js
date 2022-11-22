@@ -1,4 +1,5 @@
 export const ADD_RECIPE = "ADD_RECIPE";
+export const ADD_TYPE = "ADD_TYPE";
 export const GET_RECIPES = "GET_RECIPES";
 export const DIET_TYPE_FILTER = "DIET_TYPE_FILTER";
 export const GET_RECIPE_DETAILS = "GET_RECIPE_DETAILS";

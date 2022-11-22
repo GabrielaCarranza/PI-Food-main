@@ -43,7 +43,6 @@
 
 .zonaRecipeAdd {
     padding-left: 2rem;
-    float: right;
 }
 
 .addButton {
@@ -59,6 +58,31 @@
 }
 
 .addButton:hover {
+    color: #ff1616;
+    background-color: white;
+}
+
+
+/*----------------------------*/
+
+.zonaTypeAdd {
+    padding-left: 2rem;
+    float: right;
+}
+
+.addTypeButton {
+    color: white;
+    background-color: #ff1616;
+    font-size: calc(0.8rem+0.5vw);
+    text-align: center;
+    /* margin: 0.5rem; */
+    padding: 0.5rem;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 1px white;
+    cursor: pointer;
+}
+
+.addTypeButton:hover {
     color: #ff1616;
     background-color: white;
 }

@@ -1,20 +1,15 @@
 const { Router } = require('express');
-const { dietTypesDb } = require('../controllers/types')
+const { getDbType } = require('../controllers/types')
     /* const db = require("../db"); */
-const { Diet } = require('../db');
+    /* const { Diet } = require('../db'); */
 
 const router = Router();
 
 router.get('/', async(req, res, next) => {
-
     try {
-        dietTypesDb.forEach(e => {
-            Diet.findOrCreate({
-                where: { name: e }
-            })
-        });
-        const dietTypes = await Diet.findAll();
-        res.send(dietTypes)
+        let allTypes = await getDbType();
+        return res.status(200).send(allTypes);
+
     } catch (error) {
         next(error)
     }

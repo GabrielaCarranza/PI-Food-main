@@ -14,7 +14,7 @@ const { conn } = require('./src/db.js');
 async function main() {
     try {
         await conn.sync();
-        /*  await conn.authenticate(); */
+        /*await conn.authenticate();*/
         console.log("Connection has been established successfully.");
         server.listen(3001, () => {
             console.log('Server is listening on port 3001');

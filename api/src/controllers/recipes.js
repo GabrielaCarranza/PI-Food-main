@@ -2,14 +2,14 @@ const axios = require("axios");
 const db = require("../db");
 const { Diet, Recipe } = require("../db");
 /* const { API_KEY, API_KEY1 } = process.env; */
-const API_KEY1 = 'apiKey=02043f31c431479b8aa6a815d5104223';
+const API_KEY1 = 'apiKey=ec69ec16c785477cbafe2e93ff6fffa6';
 
 
 //  LOGICA 
 
 // Controller functions: 
 const getApiInfo = async() => {
-    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=02043f31c431479b8aa6a815d5104223&addRecipeInformation=true&number=100`);
+    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=ec69ec16c785477cbafe2e93ff6fffa6&addRecipeInformation=true&number=100`);
 
     const apiInfo = await apiUrl.data.results.map(e => {
         return {
@@ -36,12 +36,19 @@ const getDbInfo = async() => {
             }
         }
     });
-}
+};
+
+const getAllRecipes = async() => {
+    const apiInfo = await getApiInfo();
+    const dbInfo = await getDbInfo();
+    const totalInfo = apiInfo.concat(dbInfo);
+
+    return totalInfo;
+};
 
 const getApiById = async(id) => {
-    return await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=02043f31c431479b8aa6a815d5104223`)
-}
-
+    return await axios.get(`https://api.spoonacular.com/recipes/${id}/information?apiKey=ec69ec16c785477cbafe2e93ff6fffa6`)
+};
 
 const getDbById = async(id) => {
     return await Recipe.findByPk(id, {
@@ -53,15 +60,7 @@ const getDbById = async(id) => {
             }
         }
     });
-}
-
-const getAllRecipes = async() => {
-    const apiInfo = await getApiInfo();
-    const dbInfo = await getDbInfo();
-    const totalInfo = apiInfo.concat(dbInfo);
-
-    return totalInfo;
-}
+};
 
 
 module.exports = {

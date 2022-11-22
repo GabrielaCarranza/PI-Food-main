@@ -4,7 +4,7 @@ import { useDispatch, useSelector, } from 'react-redux';
 import { Link, useHistory } from "react-router-dom";
 import { getDietTypes, addRecipe } from '../actions/index'
 import './addrecipe.css';
-
+ 
 
 function validate(input) {
     const errors = {};
@@ -99,7 +99,9 @@ export default function AddRecipe() {
      
     return (
         <div className="addRecipe">
+
             <h1 className="msg">Creat your own recipe!</h1>
+            
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="form">
                     <div className="prettierForm">
@@ -163,9 +165,6 @@ export default function AddRecipe() {
                 
             </form>
         </div>
-
-
-
     )
 
 };

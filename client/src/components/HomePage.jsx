@@ -84,9 +84,14 @@ export default function Home() {
 
                 <div className='zonaRecipeAdd'>
                     <Link to="/recipe">
-                        <button className="addButton">Add new recipe</button>
-                    </Link>
-              
+                        <button className="addButton">Add new Recipe</button>
+                    </Link>              
+               </div>
+
+               <div className='zonaTypeAdd'>
+                    <Link to="/type">
+                        <button className="addTypeButton">Add new Type of Recipe</button>
+                    </Link>              
                </div>
                 
             </div>
