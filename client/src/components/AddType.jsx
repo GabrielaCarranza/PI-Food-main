@@ -65,7 +65,7 @@ export default function AddType() {
             </div>
             
             <div className="addtype">
-                <h1 className="msg">Creat your own Type of Recipe!</h1>
+                <h2 className="msg">Creat your own Type of Recipe!</h2>
                 
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className="form">

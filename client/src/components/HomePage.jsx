@@ -21,7 +21,7 @@ export default function Home() {
     const allRecipes = useSelector((state) => state.recipes);
     const dietTypes = useSelector((state) => state.dietTypes);
     
-    const [order, setOrder] = useState('')
+    const [order, setOrder] = useState('');
     
     
     const [page, setPage] = useState(1);
@@ -37,7 +37,7 @@ export default function Home() {
         setPage(pageNumber)
     };
 
-
+//nos permiten ejecutar un trozo de código según el momento en el que se encuentre el ciclo de vida de nuestro componente
     useEffect(() => {
         dispatch(getRecipes())
     }, [dispatch]);

@@ -2,7 +2,7 @@ const axios = require("axios");
 const db = require("../db");
 const { Diet, Recipe } = require("../db");
 /* const { API_KEY, API_KEY1 } = process.env; */
-const API_KEY1 = 'apiKey=1208f458ff6a448a98f17dc6056c946d';
+const API_KEY1 = 'apiKey=7163986b27ac4a28bbfc6b1f7ef2c29a';
 //https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5
 
 
