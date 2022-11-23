@@ -1,0 +1,10 @@
+.aa {
+    background: url(./../Images/load.gif) no-repeat center;
+    /*  top: 15rem; */
+    height: 100vh;
+    width: 100vw;
+}
+
+.bb {
+    background-color: #fff4e3;
+}

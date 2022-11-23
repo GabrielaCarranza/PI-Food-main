@@ -1,3 +1,20 @@
+.contenedor3 {
+    width: 100vw;
+    height: 100vh;
+    padding-left: 2rem;
+}
+
+
+/*-----------------*/
+
+.Presentation3 {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
 .addRecipe {
     width: 100%;
     background-color: black;

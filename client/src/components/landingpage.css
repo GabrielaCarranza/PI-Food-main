@@ -1,6 +1,7 @@
 .contenedor {
     width: 100vw;
     height: 100vh;
+    padding-left: 2rem;
 }
 
 
@@ -98,6 +99,9 @@
 /*--------------------------------------- RESPONSIVE  ---------------------------------------------*/
 
 @media all and (max-width: 900px) {
+    .contenedor {
+        padding: 0.5rem;
+    }
     .landing {
         display: flex;
         flex-wrap: wrap-reverse;

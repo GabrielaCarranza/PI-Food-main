@@ -1,0 +1,144 @@
+.contenedor4 {
+    width: 100vw;
+    height: 100vh;
+    padding-left: 2rem;
+}
+
+
+/*-----------------*/
+
+.Presentation4 {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 1rem;
+}
+
+.addtype {
+    width: 100%;
+    background-color: black;
+    /* min-height: 100vw; */
+    display: flex;
+    flex-direction: column;
+}
+
+.form {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+}
+
+.prettierForm {
+    margin-left: auto;
+    margin-right: auto;
+    align-content: space-around;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    /*  box-shadow: 3px 3px 5px 1px white; */
+    background-color: white;
+    color: black;
+}
+
+
+/* ********************** */
+
+.goBackButton {
+    color: white;
+    background-color: #ff1616;
+    font-size: 17px;
+    text-align: center;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 1px white;
+    cursor: pointer;
+}
+
+.goBackButton:hover {
+    color: #ce5249;
+    background-color: rgb(231, 218, 218);
+}
+
+.submitButton {
+    color: white;
+    background-color: #ff1616;
+    font-size: 17px;
+    text-align: center;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 5px 1px white;
+    cursor: pointer;
+}
+
+.submitButton:hover {
+    color: #ff1616;
+    background-color: rgb(231, 218, 218);
+}
+
+
+/* ********************** */
+
+.msg {
+    margin-top: 0;
+    margin-bottom: 0;
+    display: flex;
+    padding-top: 40px;
+    padding-bottom: 35px;
+    flex-direction: column;
+    justify-content: center;
+    font-weight: 900;
+    /*   text-shadow: 3px 2px 3px white; */
+}
+
+.msgs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom: 3px;
+    font-weight: 700;
+    color: black;
+    /*  text-shadow: 3px 2px 3px rgba(112, 44, 44); */
+}
+
+
+/* ********************** */
+
+.nameInput {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.dietTyp {
+    /* display: flex;
+    flex-direction: column; */
+    color: black;
+    background-color: white;
+}
+
+.checks {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+
+/* ********************** */
+
+.errors {
+    font-family: sans-serif;
+    color: #ff1616;
+    font-size: 14px;
+}

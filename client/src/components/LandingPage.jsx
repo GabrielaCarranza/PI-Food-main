@@ -5,9 +5,7 @@ import foto from '../Images/background_first.png';
 import fotoLogo from '../Images/LogoHenryFood.png';
  
 export default function LandingPage() {
-    return (
-              
-       
+    return (                    
 
         <div className="contenedor">
              <div className='Presentation'>

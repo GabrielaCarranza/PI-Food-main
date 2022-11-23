@@ -3,7 +3,8 @@ import './AddType.css';
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { Link } from "react-router-dom";
-import { addType } from '../actions/index'
+import { addType } from '../actions/index';
+import fotoLogo from '../Images/LogoHenryFood.png';
 
 
 function validate(input) {
@@ -55,28 +56,34 @@ export default function AddType() {
 
     
     return (
-        <div>
-            <h1 className="msg">Creat your own Type of Recipe!</h1>
+        <div className="contenedor4">
+            <div className='Presentation4'>
+                <img src={fotoLogo} alt="Logo de Henry Food" />                
+            </div>
             
-            <form onSubmit={e => handleSubmit(e)}>
-                <div className="form">
-                    <div className="prettierForm">
+            <div className="addtype">
+                <h1 className="msg">Creat your own Type of Recipe!</h1>
+                
+                <form onSubmit={e => handleSubmit(e)}>
+                    <div className="form">
+                        <div className="prettierForm">
 
-                        <div className="nameInput">
-                            <label className="msgs">Name:</label>
-                            <input className="inputs" name="name" type="text" value={input.name} onChange={e => handleChange(e)}/>
-                            {errors.name && (
-                                <span className="errors">{errors.name}</span>
-                            )}
-                        </div>
-                     </div>    
-                </div>
+                            <div className="nameInput">
+                                <label className="msgs">Name:</label>
+                                <input className="inputs" name="name" type="text" value={input.name} onChange={e => handleChange(e)}/>
+                                {errors.name && (
+                                    <span className="errors">{errors.name}</span>
+                                )}
+                            </div>
+                        </div>    
+                    </div>
 
-                <button className="submitButton" type="submit">Submit type </button>
+                    <button className="submitButton" type="submit">Submit type </button>
 
-                <Link to="/home"><button className="goBackButton">Go back</button></Link>
+                    <Link to="/home"><button className="goBackButton">Go back</button></Link>
 
-            </form>
-        </div>
+                </form>
+            </div>
+        </div>    
     )
 }

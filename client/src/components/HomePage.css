@@ -87,6 +87,24 @@
     background-color: white;
 }
 
+.ref-btn {
+    margin-top: 25px;
+    font-family: Poppins, sans-serif;
+    font-size: 18px;
+    height: 30px;
+    width: 100px;
+    background-color: #fbf859;
+    color: black;
+    border-radius: 8px;
+}
+
+.ref-btn:hover {
+    transition: .5s ease-in-out;
+    background-color: #051011;
+    cursor: pointer;
+    color: #fbf859;
+}
+
 
 /*----------------------------*/
 

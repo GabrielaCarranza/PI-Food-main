@@ -6,6 +6,7 @@ import Recipe from './Recipe';
 import { Link } from 'react-router-dom'
 import Paged from './Paged';
 import SearchBar from './SearchBar';
+import Loading from './Loading';
 import './HomePage.css';
 import fotoLogo from '../Images/LogoHenryFood.png';
 import foto_default from '../Images/LogoHenryFood_grande.png';
@@ -45,11 +46,11 @@ export default function Home() {
         dispatch(getDietTypes());
     }, [dispatch]);
 
-   /*  function handleClick(e) {
+    function handleClick(e) {
         e.preventDefault();
         dispatch(getRecipes());
         setPage(1);
-    } */
+    }
 
     function handleDietTypeFilter(e) {
         e.preventDefault();
@@ -73,7 +74,7 @@ export default function Home() {
     }
     
   
-    return(
+    return allRecipes.length > 0 && allRecipes !== undefined ? (
         <div className="home">
             <div className='Presentation'>
                 <img src={fotoLogo} alt="Logo de Henry Food" />
@@ -104,7 +105,13 @@ export default function Home() {
           
 
             <div className="zonaMain ">
+
+
                 <div className="zonaSelectOrder">
+                    <button onClick={e => { handleClick(e) }} className='ref-btn'>
+                        Refresh
+                    </button>
+
                     <label className="filters">Sort:</label>  
                     <select className="selectSort" name="alphabetical" onChange={e => handleAlphabeticalSort(e)}>
                         <option disabled selected>Alphabetical</option>
@@ -166,5 +173,6 @@ export default function Home() {
                 </div>
             </div>
         </div>
-    )
+    ):
+    <Loading/>
 }
