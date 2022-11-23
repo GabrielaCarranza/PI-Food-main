@@ -10,7 +10,7 @@ import "./recipedetails.css";
 export default function RecipeDetails(props) {
     const dispatch = useDispatch();
     const id = props.match.params.id;
-     
+      
     
     useEffect(() => {
         dispatch(getRecipeDetails(id))

@@ -5,26 +5,35 @@
     padding: 2rem;
 }
 
+
+/* ---------- */
+
 .imagenRecipe2 {
-    margin: 1.5rem;
-    width: 30%;
+    padding-top: 2rem;
+    width: 40%;
+    height: 50vh;
 }
+
+.details {
+    width: 60%;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* ---------- */
 
 .detailImg2 {
     display: flex;
     box-shadow: 3px 3px 5px 1px white;
-    /* width: 400px;
+    /*  width: 400px;
     height: 250px */
     width: 100%;
     height: auto;
-}
-
-.details {
-    margin: 1.5rem;
-    width: 70%;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
+    /* height: 100%;
+    width: auto; */
+    margin: 0.5rem;
 }
 
 .texts {
@@ -34,8 +43,15 @@
     justify-content: center;
 }
 
+
+/* ---------------- */
+
 .texts2 {
-    font-weight: 700;
+    font-weight: 900;
+    font-style: oblique;
+    padding: 0px;
+    text-decoration: underline;
+    margin-right: 1rem;
 }
 
 .ddsh {
@@ -43,6 +59,9 @@
     justify-content: start;
     padding: 0px;
 }
+
+
+/* ---------------- */
 
 .backButton2 {
     color: rgb(231, 218, 218);

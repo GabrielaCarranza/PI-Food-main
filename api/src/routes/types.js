@@ -1,7 +1,5 @@
 const { Router } = require('express');
 const { getDbType } = require('../controllers/types')
-    /* const db = require("../db"); */
-    /* const { Diet } = require('../db'); */
 
 const router = Router();
 
@@ -14,7 +12,5 @@ router.get('/', async(req, res, next) => {
         next(error)
     }
 })
-
-
 
 module.exports = router;

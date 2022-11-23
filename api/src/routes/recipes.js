@@ -4,7 +4,7 @@ const { getApiById, getAllRecipes, getDbById } = require('../controllers/recipes
 const { Recipe, Diet } = require('../db')
 
 /* const { API_KEY, API_KEY1 } = process.env;
-const API_KEY1 = '34949a8f534449769ebefb95e40d0057';*/
+const API_KEY1 = '1208f458ff6a448a98f17dc6056c946d';*/
 
 const router = Router();
 

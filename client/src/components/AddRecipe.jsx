@@ -96,7 +96,7 @@ export default function AddRecipe() {
         }
     };
     
-     
+      
     return (
         <div className="addRecipe">
 
@@ -104,6 +104,7 @@ export default function AddRecipe() {
             
             <form onSubmit={e => handleSubmit(e)}>
                 <div className="form">
+
                     <div className="prettierForm">
 
                         <div className="nameInput">
@@ -137,25 +138,28 @@ export default function AddRecipe() {
                                 <span className="errors">{errors.steps}</span>
                             )}
                         </div>
+
                     </div>
 
                     <div className="checkSelect">
-                        <label className="msg">Diet Types:  </label>
-                        {dietTypes.map(d =>{
-                            return (
-                                <div key={d} className="checks">
-                                    
-                                    <input className="check"
-                                     type="checkbox"
-                                      name={d} value={d} 
-                                      selected={input.dietTypes.includes(d)} onChange={e => handleCheckBox(e)}/>
-                                      <label className="dietTyp">{d}</label>
-                                </div>
-                            )
-                        })}
-                        {errors.dietTypes && (
-                            <span className="errors">{errors.dietTypes}</span>
-                        )}
+                        <div className="nameInput">
+                            <label className="msgs">Diet Types:  </label>
+                            {dietTypes.map(d =>{
+                                return (
+                                    <div key={d} className="checks">
+                                        
+                                        <input className="check"
+                                        type="checkbox"
+                                        name={d} value={d} 
+                                        selected={input.dietTypes.includes(d)} onChange={e => handleCheckBox(e)}/>
+                                        <label className="dietTyp">{d}</label>
+                                    </div>
+                                )
+                            })}
+                            {errors.dietTypes && (
+                                <span className="errors">{errors.dietTypes}</span>
+                            )}
+                        </div>
                     </div>
                 </div>
 
@@ -164,6 +168,8 @@ export default function AddRecipe() {
                 <Link to="/home"><button className="goBackButton">Go back</button></Link>
                 
             </form>
+
+
         </div>
     )
 
