@@ -11,8 +11,7 @@ function validate(input) {
     const errors = {};
     if (!input.name) errors.name = 'Please complete with a recipe name';
     if (!input.summary) errors.summary = 'Please add some comments about your recipe';
-    if (input.score < 1 || input.score > 100) errors.score = 'The score must be a number between 1 and 100';
-    if (input.healthScore < 1 || input.healthScore > 100) errors.healthScore = 'The score must be a number between 1 and 100';
+    if (input.score < 1 || input.score > 100) errors.score = 'The score must be a number between 1 and 100';  
     if (!input.steps.length) errors.steps = 'Please detail the steps for your recipe';
     if (!input.dietTypes.length) errors.dietTypes = 'You must select at least one diet type';
     return errors;
@@ -21,10 +20,13 @@ function validate(input) {
 
 export default function AddRecipe() {
     const dispatch = useDispatch();
+    //useSelector ->Hook que nos permite extraer datos del store
     const dietTypes = useSelector(state => state.dietTypes);
+    // useHistory -> permite acceder al estado del enrutador y realizar la navegación desde el interior de sus componentes. Lo uso para que luego de cargar el formulario correctamente, me direcciona al home automáticamente
     const history = useHistory();
-    const [errors, setErrors] = useState({})
-    
+
+    //control de errores en la carga del form
+    const [errors, setErrors] = useState({})    
     const [input, setInput] = useState({
         name: ''  ,
         summary: '',
@@ -45,14 +47,14 @@ export default function AddRecipe() {
                 [e.target.name]: e.target.value
             }
             const validations = validate(newInput);
+            // por cada cambio de datos-> valida si hay errores
             setErrors(validations)
             return newInput
         });
 
     };
     
-    function handleCheckBox(e) {
-       
+    function handleCheckBox(e) {       
         let newArray = input.dietTypes;
         let find = newArray.indexOf(e.target.value);
         
@@ -67,14 +69,15 @@ export default function AddRecipe() {
             dietTypes: newArray
         });
         const validations = validate(input);
-        setErrors(validations)
-        
+        setErrors(validations)        
     }
     
     function handleSubmit(e) {
          e.preventDefault();
 
          if (Object.values(errors).length > 0) {
+            
+            //hay errores de carga
              alert("Please complete the information required");
          } else if (
             input.name === '' && 
@@ -84,8 +87,10 @@ export default function AddRecipe() {
             !input.dietTypes.length) {
             alert("Please complete the form");}
         else {
+            // si hoy hay errores envío a actions los datos input
             dispatch(addRecipe(input));
-            alert('New recipe added successfully!')
+            alert('New recipe added successfully!');
+            // vuelvo a inicializar los datos de input
             setInput({
                 name: "",
                 summary: '',
@@ -93,6 +98,7 @@ export default function AddRecipe() {
                 steps: [],
                 dietTypes: []
             });
+            // me direcciona automáticamente al home luego de mostrar el cartel
             history.push('/home')
         }
     };
@@ -103,17 +109,17 @@ export default function AddRecipe() {
         <div className="contenedor3">
             <div className='Presentation3'>
                 <img src={fotoLogo} alt="Logo de Henry Food" />                
+                <h2 className="msg">Creat your own recipe!</h2>
             </div>
             
-            <div className="addRecipe">
-
-                <h1 className="msg">Creat your own recipe!</h1>
+            <div className="addRecipe">                
                 
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className="form">
 
                         <div className="prettierForm">
 
+                            {/* name */}
                             <div className="nameInput">
                                 <label className="msgs">Name:</label>
                                 <input className="inputs" name="name" type="text" value={input.name} onChange={e => handleChange(e)}/>
@@ -122,6 +128,7 @@ export default function AddRecipe() {
                                 )}
                             </div>
 
+                            {/* summary */}
                             <div className="nameInput">
                                 <label className="msgs">Summary:</label>
                                 <textarea name="summary" type="text" rows="4" cols="30" value={input.summary} onChange={e => handleChange(e)}/>
@@ -130,6 +137,7 @@ export default function AddRecipe() {
                                 )}
                             </div>
 
+                            {/* score */}
                             <div className="nameInput">
                                 <label className="msgs">Score:</label>
                                 <input name="score" type="number" value={input.score} onChange={e => handleChange(e)}/>
@@ -138,6 +146,7 @@ export default function AddRecipe() {
                                 )}
                             </div>
                         
+                            {/* steps */}
                             <div className="nameInput">
                                 <label className="msgs">Steps:</label>
                                 <textarea name="steps" type="text" rows="4" cols="40" value={input.steps} onChange={e => handleChange(e)}/>
@@ -148,6 +157,7 @@ export default function AddRecipe() {
 
                         </div>
 
+                        {/* diet types */}
                         <div className="checkSelect">
                             <div className="nameInput">
                                 <label className="msgs">Diet Types:  </label>
@@ -170,7 +180,7 @@ export default function AddRecipe() {
                         </div>
                     </div>
 
-                    <button className="submitButton" type="submit">Submit Recipe</button>
+                    <button className="submitButton"  type="submit" >Submit Recipe</button>
 
                     <Link to="/home"><button className="goBackButton">Go back</button></Link>
                     

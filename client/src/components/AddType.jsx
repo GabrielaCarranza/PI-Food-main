@@ -2,7 +2,7 @@ import React from "react";
 import './AddType.css';
 import { useState } from 'react'
 import { useDispatch } from 'react-redux';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { addType } from '../actions/index';
 import fotoLogo from '../Images/LogoHenryFood.png';
 
@@ -11,10 +11,12 @@ function validate(input) {
     const errors = {};
     if (!input.name) errors.name = 'Please complete with a type of recipe name';    
     return errors;
-};
+}; 
 
 export default function AddType() {
     const dispatch = useDispatch();
+
+    const history = useHistory();
 
     const [errors, setErrors] = useState({})    
     const [input, setInput] = useState({
@@ -50,7 +52,8 @@ export default function AddType() {
            setInput({
                name: ""            
            });
-          
+          // me direcciona automáticamente al home luego de mostrar el cartel
+          history.push('/home')
        }
    };
 

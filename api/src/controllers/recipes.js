@@ -3,13 +3,15 @@ const db = require("../db");
 const { Diet, Recipe } = require("../db");
 /* const { API_KEY, API_KEY1 } = process.env; */
 const API_KEY1 = 'apiKey=1208f458ff6a448a98f17dc6056c946d';
+//https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5
 
 
 //  LOGICA 
 
 // Controller functions: 
 const getApiInfo = async() => {
-    const apiUrl = await axios.get(`https://api.spoonacular.com/recipes/complexSearch?apiKey=1208f458ff6a448a98f17dc6056c946d&addRecipeInformation=true&number=100`);
+    //https://api.spoonacular.com/recipes/complexSearch?apiKey=1208f458ff6a448a98f17dc6056c946d&addRecipeInformation=true&number=100
+    const apiUrl = await axios.get(`https://run.mocky.io/v3/84b3f19c-7642-4552-b69c-c53742badee5`);
 
     const apiInfo = await apiUrl.data.results.map(e => {
         return {
